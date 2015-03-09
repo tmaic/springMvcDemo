@@ -2,7 +2,7 @@
 #* @vtlvariable name="screen_content" type="java.lang.String" *#
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-###parse("/WEB-INF/vm/common/head.vm")
+#parse("/common/head.vm")
  <body id="mainframe">
 $screen_content
 ###parse("/WEB-INF/vm/common/bottom.vm")
