@@ -1,0 +1,13 @@
+<!-- Mainly scripts -->
+<script src="${rc.contextPath}/resources/js/jquery-2.1.1.min.js"></script>
+<script src="${rc.contextPath}/resources/js/bootstrap.min.js?v=3.3.0"></script>
+<script src="${rc.contextPath}/resources/js/jquery.metisMenu.js"></script>
+<script src="${rc.contextPath}/resources/js/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="${rc.contextPath}/resources/js/hplus.js?v=2.0.0"></script>
+<script src="${rc.contextPath}/resources/js/pace.min.js"></script>
+
+#if($style == 'dashboard')
+    #parse("/common/setting.vm")
+#end

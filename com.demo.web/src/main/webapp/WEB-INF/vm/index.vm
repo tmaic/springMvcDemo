@@ -1,3 +1,4 @@
+#set($layout = "/layout/empty.vm")
 <link media="all" rel="stylesheet" type="text/css" href="resources/simditor/styles/font-awesome.css" />
 <link media="all" rel="stylesheet" type="text/css" href="resources/simditor/styles/simditor.css" />
 
@@ -11,7 +12,9 @@
 
 
 
-Hello  ${name} !
+Hello  ${name} ! $!{dateUtil.getCurrDate()}
+<br>
+${rc.requestUri}  ====
 <form action="" method="post">
     <div class="wrapper">
 
