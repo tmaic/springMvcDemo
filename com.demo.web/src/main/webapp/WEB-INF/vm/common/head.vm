@@ -19,5 +19,6 @@
 
     <link href="${rc.contextPath}/resources/css/animate.css" rel="stylesheet">
     <link href="${rc.contextPath}/resources/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="${rc.contextPath}/resources/images/drips-logo100.png"/>
 
 </head>

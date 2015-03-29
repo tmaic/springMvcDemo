@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='GBK' ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="CONSOLE-DEBUG" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="DEBUG" />
+            <!--<param name="LevelMax" value="FATAL "/>-->
+        </filter>
+    </appender>
+    <appender name="CONSOLE-INFO" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+            <!--<param name="LevelMax" value="FATAL "/>-->
+        </filter>
+    </appender>
+    <appender name="ALl-FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <param name="Append" value="true" />
+        <param name="file" value="${config.log.path}/config-all.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n" />
+        </layout>
+    </appender>
+
+
+    <appender name="FILE-VELOCITY" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <param name="Append" value="true" />
+        <param name="file" value="${config.log.path}/config-velocity.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n" />
+        </layout>
+    </appender>
+
+    <appender name="FILE-SQL" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <param name="Append" value="true" />
+        <param name="file" value="${config.log.path}/config-sql.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n" />
+        </layout>
+    </appender>
+
+
+    <category name="org.apache.cxf.interceptor" additivity="false">
+        <priority value="ERROR"/>
+        <appender-ref ref="ALl-FILE"/>
+    </category>
+
+    <category name="com.mybatis" additivity="false">
+        <priority value="${config.log.level}"/>
+        <appender-ref ref="FILE-SQL"/>
+        <appender-ref ref="ALl-FILE"/>
+    </category>
+
+    <category name="org.apache.velocity" additivity="false">
+        <priority value="${config.log.level}"/>
+        <appender-ref ref="FILE-VELOCITY"/>
+        <appender-ref ref="ALl-FILE"/>
+        <appender-ref ref="CONSOLE-INFO"/>
+    </category>
+
+
+    <root>
+        <priority value="${config.log.level}"/>
+        <appender-ref ref="${config.log4j.appender}"/>
+        <appender-ref ref="CONSOLE-INFO"/>
+    </root>
+</log4j:configuration>
