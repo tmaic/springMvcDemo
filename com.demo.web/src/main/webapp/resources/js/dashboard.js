@@ -160,4 +160,16 @@ $(document).ready(function () {
             }]
         }
     });
+
+
+    WinMove();
+    setTimeout(function () {
+        $.gritter.add({
+            title: '您有2条未读信息',
+            text: '请前往<a href="mailbox.html" class="text-warning">收件箱</a>查看今日任务',
+            time: 10000
+        });
+    }, 2000);
 });
+
+
