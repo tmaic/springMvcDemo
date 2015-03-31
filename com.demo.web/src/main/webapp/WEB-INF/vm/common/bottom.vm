@@ -40,6 +40,15 @@
 
 
 #if($style == 'dashboard')
-<script src="${rc.contextPath}/resources/js/dashboard.js"></script>
+<script src="${rc.contextPath}/resources/js/page/dashboard.js"></script>
+##    #parse("/common/setting.vm")
+#end
+
+#if($style == 'index')
+
+<script type="text/javascript" src="${rc.contextPath}/resources/simditor/scripts/module.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/resources/simditor/scripts/uploader.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/resources/simditor/scripts/simditor.js"></script>
+<script src="${rc.contextPath}/resources/js/page/index.js"></script>
 ##    #parse("/common/setting.vm")
 #end

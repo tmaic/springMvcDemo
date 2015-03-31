@@ -1,5 +1,6 @@
 package com.demo.web;
 
+import com.google.common.base.Strings;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -20,5 +21,12 @@ public class AdminController {
     public ModelAndView list(){
         ModelAndView mav = new ModelAndView("dashboard");
         return mav;
+    }
+
+    public static void main(String[] args) {
+        String a = "sdfdsfsdfsd";
+        String b = "sddfdfdfdf";
+        System.out.println("b = " + Strings.commonPrefix(a, b));
+        System.out.println("b = " + Strings.repeat(b,3));
     }
 }
