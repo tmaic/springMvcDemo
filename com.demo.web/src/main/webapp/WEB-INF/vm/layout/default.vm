@@ -2,11 +2,17 @@
 #* @vtlvariable name="screen_content" type="java.lang.String" *#
 <!DOCTYPE html>
 <html>
-    #parse("/common/head.vm")
+#parse("/common/head.vm")
 <body id="mainframe">
-    $screen_content
-#parse("/common/bottom.vm")
+    <div id="wrapper">
+        #parse("/common/sidebar.vm")
+            <div id="page-wrapper" class="gray-bg dashbard-1">
+                #parse("/common/top.vm")
+                $screen_content
+                #parse("/common/footer.vm")
+            </div>
+    </div>
+    #parse("/common/bottom.vm")
 </body>
 </html>
 
- 
