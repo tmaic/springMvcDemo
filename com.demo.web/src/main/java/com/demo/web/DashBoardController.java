@@ -8,14 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Created by meichao on 2015/3/19.
+ * Created with IntelliJ IDEA.
+ * User: meichao
+ * Date: 2015/4/2
+ * Time: 16:00
+ * Desc:
+ * To change this template use File | Settings | File Templates.
  */
 @RequestMapping(value = "/admin")
 @Controller
-public class AdminController {
+public class DashBoardController {
 
 
-    private final static Logger log = LogManager.getLogger(AdminController.class);
+    private final static Logger log = LogManager.getLogger(DashBoardController.class);
 
     @RequestMapping(value = "/dashboard")
     public ModelAndView list(){
