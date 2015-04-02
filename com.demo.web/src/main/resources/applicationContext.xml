@@ -13,27 +13,45 @@
 
     <context:component-scan base-package="com.demo"/>
 
-    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+    <context:annotation-config></context:annotation-config>
 
-    <!--&lt;!&ndash; 事务管理器 &ndash;&gt;-->
-    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-        <!--<property name="dataSource" ref="dataSource" />-->
-    <!--</bean>-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <!-- DBCP 数据源 -->
-    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
-        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>-->
-        <!--<property name="url" value="jdbc:mysql://127.0.0.1/wallbase"></property>-->
-        <!--<property name="username" value="root"></property>-->
-        <!--<property name="password" value="root"></property>-->
-        <!--<property name="initialSize" value="5"></property>-->
-        <!--<property name="maxActive" value="20"></property>-->
-    <!--</bean>-->
+    <!-- 事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl">
+            <value><![CDATA[jdbc:mysql://127.0.0.1:3306/tmaic?characterEncoding=UTF-8]]></value>
+        </property>
+        <property name="user" value="root"/>
+        <property name="password" value="Passw0rd"/>
+        <property name="maxPoolSize"        value="12" />
+        <property name="minPoolSize"        value="0" />
+        <property name="maxStatements"      value="100" />
+        <property name="initialPoolSize"    value="3" />
+        <property name="maxIdleTime"        value="10"/>
+        <property name="idleConnectionTestPeriod"   value="10" />
+    </bean>
 
-    <!-- 配置MyBatis -->
+    <!-- 配置写的ibatis-->
+    <bean id="writerSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+    </bean>
+
+    <bean id="writerSqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="writerSqlSessionFactory" />
+    </bean>
+
+     <!--&lt;!&ndash;配置MyBatis &ndash;&gt;-->
     <!--<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">-->
         <!--<property name="configLocation" value="classpath:sqlmap-config.xml" />-->
         <!--<property name="dataSource" ref="dataSource" />-->
     <!--</bean>-->
 
+    <!-- aop动态代理 -->
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
 </beans>

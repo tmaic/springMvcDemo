@@ -18,6 +18,14 @@
         
         <mvc:view-controller path="/" view-name="index"/>
         <!--<mvc:resources location="/,classpath:/META-INF/resources/" mapping="/resources/**"/>-->
+
+        <!--登录拦截器-->
+        <mvc:interceptors>
+            <mvc:interceptor>
+                <mvc:mapping path="/admin/**"/>
+                <bean class="com.demo.interceptor.LoginInterceptor" />
+            </mvc:interceptor>
+        </mvc:interceptors>
           
 
 

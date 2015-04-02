@@ -1,36 +1,25 @@
 package com.demo.domain;
 
+import lombok.Data;
+
+import java.util.Date;
+
 /**
  * User: meichao
- * Date: 14-1-10
- * Time: œ¬ŒÁ5:43
+ * Date: 14-7-1
+ * Time: ‰∏ãÂçà4:36
  */
+@Data
 public class User {
+
     private int id;
-    private String name;
-    private String pwd;
 
-    public int getId() {
-        return id;
-    }
+    private String email;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String password;
 
-    public String getName() {
-        return name;
-    }
+    private Date created;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private Date modified;
 
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
 }
