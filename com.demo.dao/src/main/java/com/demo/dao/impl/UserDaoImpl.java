@@ -22,6 +22,6 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         Map map = new HashMap();
         map.put("email",email);
         map.put("password",password);
-        return this.sqlSession.selectOne("com.demo.dao.UserDao.findUser", map);
+        return this.writerSqlSession.selectOne("com.demo.dao.UserDao.findUser", map);
     }
 }

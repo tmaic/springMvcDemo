@@ -12,6 +12,6 @@ import javax.annotation.Resource;
 public class BaseDao {
 
     @Resource(name="writerSqlSession")
-    public SqlSessionTemplate sqlSession;
+    public SqlSessionTemplate writerSqlSession;
 
 }
