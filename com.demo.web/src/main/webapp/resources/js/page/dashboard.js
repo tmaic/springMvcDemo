@@ -171,7 +171,7 @@ $(document).ready(function () {
         });
     }, 2000);
 
-    $("#userList").load("/admin/userList.html?pageIndex=1&pageSize=10")
+    $("#userList").load("/admin/userList.html?pageIndex=1&pageSize=3")
 });
 
 

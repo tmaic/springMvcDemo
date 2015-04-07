@@ -28,3 +28,38 @@
         $!module.reset()
     #end
 #end
+
+#macro(ajaxShowPage $page)
+    #if($page)
+        #set($pagePos = 2) ##当前页的尾巴长度
+##        总$!{page.totalItem}条记录。
+
+        #if($page.previousPageAvailable) ##如果能向上翻页
+        <button type="button" class="btn btn-white"><i class="fa fa-chevron-left"></i></button>
+        <button class="btn btn-white">1</button>
+        #end
+
+        #if($!page.index>$pagePos+2) .. #end ##显示前面的省略号
+        #foreach($i in [$pagePos..1]) ##增加前面的尾巴
+            #if($!page.index - $i > 1)
+                #set($pageIndex= $!page.index - $i)
+            <button class="btn btn-white">$pageIndex</button>
+            #end
+        #end
+        <button class="btn btn-white  active">$!page.index</button>
+        #foreach($i in [1..$pagePos]) ##增加后面的尾巴
+            #if($!page.totalPage - $!page.index - $i > 0)
+                #set($pageIndex= $!page.index + $!i)
+            <button class="btn btn-white">$pageIndex</button>
+            #end
+        #end
+        #if($!page.totalPage - $!page.index > $pagePos+1) .. #end ##显示后面的省略号
+        #if($page.nextPageAvailable) ##显示后面的页
+##        <a href="$module.addQueryData("page",$!{page.totalPage}).render()">$!{page.totalPage}</a>
+        <button class="btn btn-white">$!{page.totalPage}</button>
+##        <a href="$module.addQueryData("page",$!{page.nextPage}).render()">下一页</a>
+        <button type="button" class="btn btn-white"><i class="fa fa-chevron-right"></i></button>
+        #end
+##        $!module.reset()
+    #end
+#end

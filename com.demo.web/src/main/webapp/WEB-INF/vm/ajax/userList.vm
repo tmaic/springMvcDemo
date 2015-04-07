@@ -37,11 +37,15 @@
                     <td>$!{velocityCount}</td>
                     <td>$!user.email</td>
                     <td>$!user.password</td>
-                    <td>$!user.created</td>
+                    <td>$!dateUtil.getFormatDateTime($!user.created)</td>
                 </tr>
             #end
             </tbody>
         </table>
-
+        <div class="text-center">
+            <div class="btn-group">
+                #ajaxShowPage($users)
+            </div>
+        </div>
     </div>
 </div>
