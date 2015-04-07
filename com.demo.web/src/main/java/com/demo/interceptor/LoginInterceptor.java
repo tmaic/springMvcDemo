@@ -1,6 +1,7 @@
 package com.demo.interceptor;
 
-import com.demo.util.CookiesUtil;
+
+import com.demo.domain.util.CookiesUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

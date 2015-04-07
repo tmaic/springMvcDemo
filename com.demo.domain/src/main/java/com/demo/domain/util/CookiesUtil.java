@@ -1,7 +1,5 @@
-package com.demo.util;
+package com.demo.domain.util;
 
-
-import com.demo.util.security.DesEncrypt;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.Cookie;
@@ -9,12 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * Created with IntelliJ IDEA.
  * User: meichao
- * Date: 14-7-1
- * Time: 下午5:14
+ * Date: 2015/4/3
+ * Time: 15:38
+ * Desc:
+ * To change this template use File | Settings | File Templates.
  */
 public class CookiesUtil {
-
     public final static Logger log = Logger.getLogger(CookiesUtil.class);
 
     /**
@@ -60,9 +60,10 @@ public class CookiesUtil {
 
         CookieDomain cd = new CookieDomain();
         cd.setEmail(email);
-//        cd.setDomain("config.center.com");
+        cd.setDomain("config.center.com");
         cd.setName(CookiesUtil.COOKIE_NAME);
         cd.setExpiry(CookiesUtil.expiry);
+//        String cookieJson = JSON.toJSONString(cd);
         String cookieJson = cd.getEmail() + ":" + cd.getCreated() + ":" +cd.getExpiry();
         Cookie cookie = newCookie(cookieJson);
         servletResponse.addCookie(cookie);
@@ -93,7 +94,7 @@ public class CookiesUtil {
         DesEncrypt crypt = new DesEncrypt(COOKIE_KEY);
         String v = null;
         try {
-             v =  crypt.decrypt(value);
+            v =  crypt.decrypt(value);
         } catch (Exception e) {
             log.error("解密失敗",e);
         }

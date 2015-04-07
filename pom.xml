@@ -13,7 +13,6 @@
         <module>com.demo.service</module>
         <module>com.demo.dao</module>
         <module>com.demo.domain</module>
-        <module>com.demo.util</module>
     </modules>
 
 

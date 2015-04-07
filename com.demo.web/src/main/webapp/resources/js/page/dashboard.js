@@ -170,6 +170,8 @@ $(document).ready(function () {
             time: 10000
         });
     }, 2000);
+
+    $("#userList").load("/admin/userList.html?pageIndex=1&pageSize=10")
 });
 
 

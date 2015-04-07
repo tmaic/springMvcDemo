@@ -1,12 +1,13 @@
 package com.demo.web;
 
 
+
 import com.demo.WebHelper;
 import com.demo.domain.User;
+import com.demo.domain.util.CookieDomain;
+import com.demo.domain.util.CookiesUtil;
 import com.demo.service.IndexService;
 import com.demo.service.UserService;
-import com.demo.util.CookieDomain;
-import com.demo.util.CookiesUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

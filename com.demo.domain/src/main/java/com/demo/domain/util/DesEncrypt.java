@@ -1,4 +1,4 @@
-package com.demo.util.security;
+package com.demo.domain.util;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
@@ -11,12 +11,14 @@ import java.io.IOException;
 import java.security.SecureRandom;
 
 /**
+ * Created with IntelliJ IDEA.
  * User: meichao
- * Date: 14-7-4
- * Time: 下午6:04
+ * Date: 2015/4/3
+ * Time: 15:38
+ * Desc:
+ * To change this template use File | Settings | File Templates.
  */
 public class DesEncrypt {
-
 
     private byte[] desKey;
 
@@ -77,7 +79,7 @@ public class DesEncrypt {
     public static String base64Encode(byte[] s) {
         if (s == null)
             return null;
-        BASE64Encoder b = new BASE64Encoder();
+        BASE64Encoder b = new sun.misc.BASE64Encoder();
         return b.encode(s);
     }
 
@@ -105,5 +107,4 @@ public class DesEncrypt {
         //解密
 //        System.out.println("Decode:" + crypt.decrypt("oTNH3lU56e0t6fGn+hTLChteLS3ZFa4h"));
     }
-
 }

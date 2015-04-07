@@ -1,7 +1,7 @@
 package com.demo;
 
 
-import com.demo.util.CookieDomain;
+import com.demo.domain.util.CookieDomain;
 
 /**
  * User: meichao

@@ -11,6 +11,18 @@
 
 
 
+    <select id="getUserCount" resultType="int">
+        select count(*) FROM tb_user
+    </select>
+
+    <select id="getAllUser" parameterType="map" resultMap="userMap">
+        select
+        id,password,email,created,modified
+        from tb_user limit #{start},#{end}
+    </select>
+
+
+
     <resultMap type="User" id="userMap">
         <id property="id" column="id" />
         <result property="password" column="password" />

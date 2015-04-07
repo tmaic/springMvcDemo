@@ -1,0 +1,47 @@
+#set($layout = "layout/empty.vm")
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>用户列表</h5>
+        <div class="ibox-tools">
+            <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <a href="table_basic.html#" data-toggle="dropdown" class="dropdown-toggle">
+                <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="table_basic.html#">选项1</a>
+                </li>
+                <li><a href="table_basic.html#">选项2</a>
+                </li>
+            </ul>
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+    <div class="ibox-content">
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>邮箱</th>
+                <th>密码</th>
+                <th>日期</th>
+            </tr>
+            </thead>
+            <tbody>
+            #foreach($user in $users)
+                <tr>
+                    <td>$!{velocityCount}</td>
+                    <td>$!user.email</td>
+                    <td>$!user.password</td>
+                    <td>$!user.created</td>
+                </tr>
+            #end
+            </tbody>
+        </table>
+
+    </div>
+</div>
