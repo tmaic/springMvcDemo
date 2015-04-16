@@ -207,63 +207,56 @@
         <div class="col-lg-8">
 
             <div class="row">
-                <div class="col-lg-6" id="userList">
-
-                </div>
-                <div class="col-lg-6">
+                <div class="col-lg-12" id="userList">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>任务列表</h5>
+                            <h5>用户列表</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
                                 </a>
+                                <a href="table_basic.html#" data-toggle="dropdown" class="dropdown-toggle">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="table_basic.html#">选项1</a>
+                                    </li>
+                                    <li><a href="table_basic.html#">选项2</a>
+                                    </li>
+                                </ul>
                                 <a class="close-link">
                                     <i class="fa fa-times"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <ul class="todo-list m-t small-list ui-sortable">
-                                <li>
-                                    <a href="widgets.html#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                                    <span class="m-l-xs todo-completed">开会</span>
 
-                                </li>
-                                <li>
-                                    <a href="widgets.html#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                                    <span class="m-l-xs  todo-completed">项目开发</span>
+                            <table class="table table-bordered table-striped table-hover  dataTable" id="userTable">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>邮箱</th>
+                                    <th>密码</th>
+                                    <th>日期</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+##                                    #foreach($user in $users)
+##                                    <tr>
+##                                        <td>$!{velocityCount}</td>
+##                                        <td>$!user.email</td>
+##                                        <td>$!user.password</td>
+##                                        <td>$!dateUtil.getFormatDateTime($!user.created)</td>
+##                                    </tr>
+##                                    #end
+                                </tbody>
+                            </table>
 
-                                </li>
-                                <li>
-                                    <a href="widgets.html#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                    <span class="m-l-xs">修改bug</span>
-                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
-                                </li>
-                                <li>
-                                    <a href="widgets.html#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                    <span class="m-l-xs">修改bug</span>
-                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
-                                </li>
-                                <li>
-                                    <a href="widgets.html#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                    <span class="m-l-xs">修改bug</span>
-                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
-                                </li>
-                                <li>
-                                    <a href="widgets.html#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                    <span class="m-l-xs">修改bug</span>
-                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
-                                </li>
-                                <li>
-                                    <a href="widgets.html#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                    <span class="m-l-xs">修改bug</span>
-                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
+
+
             </div>
             <div class="row">
                 <div class="col-lg-12">

@@ -3,6 +3,8 @@ package com.demo.web;
 import com.demo.domain.User;
 import com.demo.service.UserService;
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -53,5 +56,11 @@ public class DashBoardController {
         String b = "sddfdfdfdf";
         System.out.println("b = " + Strings.commonPrefix(a, b));
         System.out.println("b = " + Strings.repeat(b,3));
+
+
+
+//        CollectionUtils.filter();
+
+
     }
 }

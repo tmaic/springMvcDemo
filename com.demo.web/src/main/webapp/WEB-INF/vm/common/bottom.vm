@@ -40,12 +40,11 @@
 
 
 <!-- Data Tables -->
-<script src="${rc.contextPath}/resources/js/dataTable/jquery.dataTables.js"></script>
+<script src="${rc.contextPath}/resources/js/dataTable/jquery.dataTables.min.js"></script>
 <script src="${rc.contextPath}/resources/js/dataTable/dataTables.bootstrap.js"></script>
 
 
 #if($style == 'dashboard')
-<script src="${rc.contextPath}/resources/js/jBootstrapPage.js"></script>
 <script src="${rc.contextPath}/resources/js/page/dashboard.js"></script>
 
 ##    #parse("/common/setting.vm")
