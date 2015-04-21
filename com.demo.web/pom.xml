@@ -87,7 +87,9 @@
                 <config.log4j.appender>ALl-FILE</config.log4j.appender>
                 <config.log.level>INFO</config.log.level>
                 <config.log.path>e://logs/config</config.log.path>
+                <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
             </properties>
         </profile>
+
     </profiles>
 </project>
