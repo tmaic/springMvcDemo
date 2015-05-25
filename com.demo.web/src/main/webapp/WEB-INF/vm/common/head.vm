@@ -17,11 +17,12 @@
     <!-- Gritter -->
     <link href="${rc.contextPath}/resources/css/plugins/jquery.gritter.css" rel="stylesheet">
 
-    <!-- Data Tables -->
-    <link href="${rc.contextPath}/resources/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+
 
     <link href="${rc.contextPath}/resources/css/animate.css" rel="stylesheet">
     <link href="${rc.contextPath}/resources/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="${rc.contextPath}/resources/images/drips-logo100.png"/>
+    <!-- Data Tables -->
+    <link href="${rc.contextPath}/resources/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
 
 </head>

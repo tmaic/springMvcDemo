@@ -1,0 +1,48 @@
+#set($style = "userList")
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>基础表格</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/">主页</a>
+            </li>
+            <li>
+                <strong>用户管理</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <table class="table table-bordered">
+                    <thead class="ibox-title">
+                    <tr>
+                        <th>ID</th>
+                        <th>邮箱</th>
+                        <th>密码</th>
+                        <th>注册时间</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="ibox-content">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+

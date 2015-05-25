@@ -58,3 +58,7 @@
 <script src="${rc.contextPath}/resources/js/page/index.js"></script>
 ##    #parse("/common/setting.vm")
 #end
+
+#if($style == 'userList')
+<script src="${rc.contextPath}/resources/js/page/userList.js"></script>
+#end

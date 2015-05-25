@@ -4,6 +4,7 @@ package com.demo.web;
 
 import com.demo.WebHelper;
 import com.demo.domain.User;
+import com.demo.domain.page.TableData;
 import com.demo.domain.util.CookieDomain;
 import com.demo.domain.util.CookiesUtil;
 import com.demo.service.IndexService;
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -79,8 +81,16 @@ public class IndexController {
 
     /**访问URL：http://localhost/turn.html**/
     @RequestMapping(value = "/turn",method = RequestMethod.GET)
-    public String turn(){
-        return "turn";
+    @ResponseBody
+    public TableData turn(){
+        List<User> userList = userService.getAllUser(0,20);
+        TableData tableData = new TableData();
+        tableData.setResults(userList);
+        tableData.setSEcho(0);
+        tableData.setTotalDisplayRecords(20);
+        tableData.setTotalRecords(20);
+
+        return tableData;
     }
 
 
